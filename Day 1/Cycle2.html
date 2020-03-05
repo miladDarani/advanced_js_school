@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cycle 2 Slider</title>
+	<style>
+		#slideshow_1 {
+			width:600px;
+			height:auto;
+			margin:50px auto;
+			border:1px solid #ccc;
+		}
+		 img {
+			width: 100%;
+			height:auto;
+		}
+		#caption{
+			
+		}
+		.center {
+			text-align: center
+		}
+		.cycle {
+			width: 20px;
+			height: 20px;
+			background:transparent;
+			position: absolute;
+			z-index: 1000;
+			cursor: pointer;
+		}
+		.cycle-prev {
+			left: 20px;
+			top: 200px;
+			color:red;
+			background-color: red;
+			border-radius: 100px;
+		}
+
+		.cycle-next {
+			right: 20px;
+			top: 200px;
+			color:red;
+			background-color: red;
+			border-radius: 100px;
+		}
+		.cycle-pager {
+			text-align: center;
+			font-size:50px;
+			cursor: pointer;
+			
+		
+		}
+
+	</style>
+	<script>
+
+	</script>
+</head>
+<body>
+
+	<div class="cycle-slideshow" id="slideshow_1" data-cycle-speed="5000" data-cycle-fx="scrollHorz" data-cycle-caption-template="{{cycleTitle}}" data-cycle-timeout="5" >
+
+
+		<div class="cycle cycle-prev"></div>
+		<div class="cycle cycle-next"></div>
+
+
+    <img src="star_images/stars1.jpg" data_cycle_title="Galaxy">
+    <img src="star_images/stars2.jpg" data_cycle_title="Neil">
+    <img src="star_images/stars3.jpg" data_cycle_title="Orange">
+    <img src="star_images/stars4.jpg" data_cycle_title="Blue">
+    <div class="cycle-pager"></div>
+	</div>
+	<div id="caption" class="center"></div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="jquery.cycle2.min.js"></script>
+</body>
+</html>

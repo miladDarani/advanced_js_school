@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Review</title>
+	<style>
+		body {
+			font-family: "Open Sans", Arial, Verdana, sans-serif;
+			font-size: 16px;
+		}
+		* {
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>jQuery Review</h1>
+
+		<p>Change the colour of ALL paragraphs by clicking this button.</p>
+
+		<form action="https://google.ca">
+			<!-- We will add e.preventDefault() to our button click
+				handler so that it does not submit the form to google -->
+			<button id="change_color">Change Color</button>
+		</form>
+
+		<p>Change the color of individual paragraphs by clicking each one<./p>
+
+		<div id="paras">
+
+			<p>Hello, World!</p>
+
+			<p>Hello, World!</p>
+
+			<p>Hello, World!</p>
+
+			<p>Hello, World!</p>
+
+			<p>Hello, World!</p>
+
+			<p>Hello, World!</p>
+
+		</div>
+
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+	// Wait for document 
+	$(document).ready(function(){
+
+		// Target button with a click handler
+		// Pass the event to the handler
+		$('#change_color').click(function(e){
+			// prevent defualt
+			e.preventDefault(); 
+			// Handles the paragraphs as a group
+			// We can change the CSS of the group
+			$('#paras p').css({
+				color: "#F00",
+				fontSize: "20px"
+			});
+			// Inside a handler, $(this) is always
+			// the element that caused the event
+			console.log($(this));
+		});
+
+		// In this case, we can't treat the paragraphs as a group...
+		// because we want to handle a click on each one individually
+		// So we must loop through them (with each())
+		$('#paras p').each(function(){
+			// $(this) is each of the elements we are targeting:
+			// The paragraph tags inside the #paras div
+			console.log($(this));
+			// Add a click handler to each paragraph
+			$(this).click(function(e){
+				// Change the style of the paragraph that was clicked
+				// We pass in the style as a JSON object:
+				// JavaScript Object Notation (JSON)
+				$(this).css({
+					color: "#F00",
+					fontSize: "20px"
+				});
+			});
+		});
+
+		/*
+		var paras = document.getElementsByTagName('p');
+		for(var i=0;i<paras.length;i++) {
+			paras[i]
+		}
+		*/
+
+	});
+</script>
+</body>
+</html>

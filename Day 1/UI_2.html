@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css">
+</head>
+<style>
+	#complex {
+
+	}
+</style>
+<body>
+	<h1>Compex Content</h1>
+
+	<div id="complex">
+
+		<ul>
+			<li><a href="#one">One</a></li>
+			<li><a href="#two">Two</a></li>
+			<li><a href="#three">Three</a></li>
+			<li><a href="#four">Four</a></li>
+		</ul>
+
+		<div id="one">
+			<h2>Page One</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime harum culpa est sit ex ullam, mollitia, sequi in veniam eaque, voluptatem. Odit quam, dolorem nemo corrupti excepturi soluta laborum. Odio.</p>
+		</div>
+		
+		<div id="two">
+			<h2>Page Two</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime harum culpa est sit ex ullam, mollitia, sequi in veniam eaque, voluptatem. Odit quam, dolorem nemo corrupti excepturi soluta laborum. Odio.</p>
+		</div>
+
+		<div id="three">
+			<h2>Page Three</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime harum culpa est sit ex ullam, mollitia, sequi in veniam eaque, voluptatem. Odit quam, dolorem nemo corrupti excepturi soluta laborum. Odio.</p>
+		</div>
+
+		<div id="four">
+			<h2>Page Four</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime harum culpa est sit ex ullam, mollitia, sequi in veniam eaque, voluptatem. Odit quam, dolorem nemo corrupti excepturi soluta laborum. Odio.</p>
+		</div>
+
+	</div><!-- /complex -->
+<!-- ********************************* Jquery CDN ********************************** -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- ********************************* Jquery UI ********************************** -->
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous">	
+</script>
+<!-- ********************************* My script JQ ********************************** -->
+<script>
+	
+	$(document).ready(function(){
+		$('#complex').tabs()
+	})
+
+
+</script>
+<!-- *********************************  /My script JQ ********************************** -->
+</body>
+</html>

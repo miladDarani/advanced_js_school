@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cals</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Test Calucaltor</h1>
+		<h2 id="total"></h2>
+		<div id="tape"></div>
+
+	</div>
+	<script src="Calc.js"></script>
+	<script>
+		var Calc = new Calc();
+		var numbers = Calc.add(4).add(5).add(5).add(20).minus(20).multiply(4).getTotal();
+		document.getElementById('total').innerHTML = numbers
+
+	</script>
+</body>
+</html>

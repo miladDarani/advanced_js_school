@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body {
+			font-family: "Open Sans", Arial, Verdana, sans-serif;
+			font-size: 16px;
+		}
+		* {
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1></h1>
+	</div>
+<script>
+
+	// Javascript
+	
+	// Objects
+	
+		// 1. create a literal object with two properties
+		
+		var user = { 
+			first: 'Dave',
+			last: 'Jones'
+		}
+
+		// 2. Add a property named aged to the user object, and assign the value of 22.
+		
+		user.age = 22;
+		user['age'] = 22;
+
+		// 3. Loop through the user object and output each key and value 
+		
+		for(var i in user) {
+			console.log(i + ': ' + user[i]);
+		}
+
+		// 4. use javascript to delay executing a function by 3 seconds.
+		
+		setTimetout("myfunc()", 3000);
+
+
+		// 5. use javascript to repeatedly run a function every 2 seconds
+		
+		var x = setInterval("myfunc()", 2000);
+
+		// 6. javascript to end an interval
+		
+		setTimeout(function(){
+			clearInterval(x)
+		}, 6000);
+
+		// 7. add an event listener to an anchor tag with id of 'external', and prevent it from going to the URL (unobtrusively)
+		
+		document.getElementById('external').onclick = function(e) {
+			// preventDefault() prevents the default behaviour of
+			// whatever element initiated the event
+			e.preventDefault();
+		}
+
+
+		// In what format do most jQuery function accept 'option' parameters:
+		// answer: a literal object
+		// eg:
+		
+		var options = {
+			width: '500px',
+			height: '300px'
+		}
+		
+		$('#external').css(options)
+
+</script>
+
+</body>
+</html>

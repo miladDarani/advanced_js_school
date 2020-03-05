@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Basic Literal Objects</title>
+	<style>
+		body {
+			font-family: "Open Sans", Arial, Verdana, sans-serif;
+			font-size: 16px;
+		}
+		* {
+			box-sizing: border-box;
+		}
+
+		form {
+			display: block;
+			width: 50%;
+			float: left;
+		}
+
+		#inventory {
+			width: 45%;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Basic Literal Objects</h1>
+
+		<p>See console for output</p>
+
+		<p><button id="print">Print Car Inventory</button>
+
+		<form id="car" method="post">
+			<p><input name="make" type="text" placeholder="Car Make" /></p>
+			<p><input name="model" type="text" placeholder="Car Model" /></p>
+			<p><input name="color" type="text" placeholder="Car Color" /></p>
+			<p><input name="price" type="text" placeholder="Car Price" /></p>
+			<p><input name="year" type="text" placeholder="Car Year" /></p>
+			<p><input name="image" type="text" placeholder="Car Image" /></p>
+			<p><button id="submit">Submit</button></p>
+		</form>
+
+		<div id="inventory"></div>
+
+	</div>
+<script>
+
+	var a = {};
+	var b = {};
+	var c =  new Object();
+
+	a['first'] = 'Dave';
+	a.last = 'Jones';
+
+	c.first = 'Harry';
+	c.last = 'Potter';
+
+	//console.log(a==b);
+	//console.log(a);
+	//console.log(b);
+	//console.log(c);
+
+	// you can add methods to objects... but
+	// you shouldn't really do this for literal objects
+	a.getName = function() {
+		console.log(this); // this will be the object
+		return this.first + ' ' + this.last;
+	}
+
+	// you can add methods to objects... but
+	// you shouldn't really do this for literal objects
+	c.getName =  function() {
+		console.log(this); // this will be the object
+		return this.first + ' ' + this.last;
+	}
+
+	// Each time 
+	// console.log(a.getName());
+	// console.log(c.getName());
+
+	// Literal objects are best for simply
+	// storing information
+	var car = {
+		make: "Honda",
+		model: "Acord",
+		color: "White",
+		price: "23000",
+		year: "2019"
+	}
+
+	// console.log(car);
+
+	var dealership = [];
+
+	window.onload = function() {
+
+		var form = document.getElementById('car');
+
+		form.onsubmit = function(e) {
+
+			e.preventDefault();
+
+			var car = {};
+			car.make = this.make.value;
+			car.model = this.model.value;
+			car.color = this.color.value;
+			car.price = this.price.value;
+			car.year = this.year.value;
+			car.image = this.image.value;
+
+			dealership.push(car);
+
+			alert('Car was added to dealership');
+
+			console.log(dealership);
+
+			this.reset();
+
+		}
+
+
+
+
+		var btn = document.getElementById('print');
+		// add a click hander
+		// in the handler function, loop through the dealership array
+		// output each cars properties in a ul/li list in #inventory
+		
+		btn.addEventListener('click', function(e){
+
+			for(var i=0;i<dealership.length;i++) {
+
+				var car = dealership[i];
+				var out = '<ul>';
+				for(var x in car) {
+					if(x == 'image') {
+						out += "<li><img src='car_images/" + car[x] +" ' /></li>"
+					} else {
+						out += "<li>" + x + ": " + car[x] + "</li>";
+					}
+					
+				}
+				out += '</ul>';
+
+				document.getElementById('inventory').innerHTML += out;
+
+			}
+
+		});
+
+	}
+
+	console.log(car);
+
+
+</script>
+</body>
+</html>

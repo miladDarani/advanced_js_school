@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Advanced Event Handling</title>
+	<style>
+		body {
+			font-family: "Open Sans", Arial, Verdana, sans-serif;
+			font-size: 16px;
+		}
+		* {
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Advanced Event Handling</h1>
+
+		<button id="click">Click Me</button>&nbsp;&nbsp;
+		<button id="click2">No, Click Me</button>
+
+	</div>
+<script>
+
+	window.onload = function() {
+
+		/*
+		
+		// Simple event handlers only allow one handler per event
+		// They will overwrite each other if you add more than one
+
+
+		// first click handler: alert the h1 innerHTML
+		document.getElementById('click').onclick = function(){
+			var title = document.getElementsByTagName('h1')[0].innerHTML;
+			alert(title);
+		}
+
+
+		document.getElementById('click').onclick = function(){
+			alert('I just read the title')
+		}
+		*/
+
+		/*
+		
+			addEventListener() allows us to stack event handlers, so that all
+			will be handled in order.
+
+			addEventListener events do not use the 'on' prefix for event.
+			So, events become:  click, mouseover, mouseout
+
+		 */
+		document.getElementById('click2').addEventListener('click', function(e){
+			var title = document.getElementsByTagName('h1')[0].innerHTML;
+			alert(title);
+		});
+
+		document.getElementById('click2').addEventListener('click', function(e){
+			alert('I just read the title')
+		})
+
+	}
+
+
+
+</script>
+</body>
+</html>

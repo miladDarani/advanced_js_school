@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object1</title>
+</head>
+<body>
+	<div class="container">
+		<h1>BAsic Objects</h1>
+	</div>
+
+
+	<script>
+
+
+
+		var a = {}
+		var b = {}
+		var c = new Object()
+
+
+		a.first = 'Milad'
+		a.last = 'Darani'
+
+		a.getName = function(){
+			console.log(this)
+			return this.first + ' ' + this.last
+		}
+		console.log(a.getName())
+
+	</script>
+</body>
+</html>

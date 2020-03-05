@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery UI</title>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/vader/jquery-ui.css">
+	<style>
+		li {
+			cursor: move;
+		}
+		li:hover{
+			background-color:orange;
+			color:white;
+		}
+
+		#mylist li:first-child {
+			background-color: #000;
+			color:white;
+		}
+		#mylist li:last-child {
+			background-color: red;
+			color:white;
+		}
+
+		#drag{
+			width: 200px;
+			height: 200px;
+			border:2px solid orange;
+			margin-top:40px;
+			cursor: move;
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		#faq {
+			width:50%;
+			margin:0 auto;
+
+		}
+	</style>
+</head>
+<body>
+	
+	<h1>UI Demo</h1>
+
+	<p><a href="#" id="dialog">Open Dialog</a></p>
+	<div id="mydialog" title="a basic dialog">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam voluptatibus maiores amet dignissimos. Repudiandae magni eum ab, atque iste architecto tempora beatae laudantium recusandae autem, reprehenderit cupiditate. Animi, voluptatibus, sit.</p>
+	</div>
+
+	<ul id="mylist">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+		<li>Item 5</li>
+		<li>Item 6</li>
+		<li>Item 7</li>
+	</ul>
+
+	<div id="drag">
+		<p>I am dragable</p>
+	</div>
+
+	<div id="faq">
+
+		<h4>Accordion</h4>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis facere id repellat distinctio qui tempore aut, nostrum recusandae aliquid, accusamus accusantium placeat totam maiores tenetur laudantium soluta animi facilis. Voluptates.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius unde vel quaerat et ex ratione, labore libero nemo. Debitis vel inventore cumque placeat, earum nulla vitae natus nostrum incidunt optio.</p>
+		</div>
+
+		<h4>What is the meaning</h4>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis facere id repellat distinctio qui tempore aut, nostrum recusandae aliquid, accusamus accusantium placeat totam maiores tenetur laudantium soluta animi facilis. Voluptates.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius unde vel quaerat et ex ratione, labore libero nemo. Debitis vel inventore cumque placeat, earum nulla vitae natus nostrum incidunt optio.</p>
+		</div>
+
+		<h4>Coffee</h4>
+		<div>
+			<img src="star_images/stars4.jpg" alt="">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis facere id repellat distinctio qui tempore aut, nostrum recusandae aliquid, accusamus accusantium placeat totam maiores tenetur laudantium soluta animi facilis. Voluptates.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius unde vel quaerat et ex ratione, labore libero nemo. Debitis vel inventore cumque placeat, earum nulla vitae natus nostrum incidunt optio.</p>
+		</div>
+
+		<h4>Soccer</h4>
+		<div>
+			<h5>options</h5>
+			<ul>
+				<li>Items 1</li>
+				<li>Items 1</li>
+				<li>Items 1</li>
+			</ul>
+		</div>
+		
+
+	</div>
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+<script>
+	
+	$(document).ready(function(){
+		$('#mylist').sortable()
+		$('#drag').draggable()
+		$('#faq').accordion({heightStyle: 'content',
+												 collapsible: true,
+												 active: false
+		});
+
+		$('#dialog').click(function(e){
+			e.preventDefault();
+			$('#mydialog').dialog()
+		})
+	})
+
+
+
+</script>
+
+
+
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous">	
+</script>
+
+
+
+</body>
+</html>

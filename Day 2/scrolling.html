@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Native Scrolling</title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		.container{
+			width:600px;
+			margin:0 auto;
+			border: 2px solid black;
+			padding:10px;
+		}
+		button {
+			padding:11px;
+			background-color: lightblue;
+			margin:4px;
+			border-radius: 10px;
+		}
+		button:hover {
+			background-color:green;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	
+		<div>
+			<h1>Smooth Scroll</h1>
+			<button data-target='one'>Section 1</button>&nbsp;
+			<button data-target='two'>Section 2</button>&nbsp;
+			<button data-target='three'>Section 3</button>&nbsp;
+			<button data-target='four'>Section 4</button>&nbsp;
+			<button data-target='five'>Section 5</button>&nbsp;
+			<button data-target='six'>Section 6</button>&nbsp;
+		</div>
+
+		<div id="one">
+			
+			<h2>Section one</h2>
+			<button data-target='two'>Next</button>&nbsp;
+			<button data-target='six'>Bottom</button>&nbsp;
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, magnam, consectetur quo facere iure doloremque ducimus obcaecati modi nihil tenetur veniam, optio earum quas molestias nulla temporibus, similique ex distinctio.</p>
+		</div>
+
+
+
+		<div id="two">
+
+			
+			<h2>Section two</h2>
+			<button data-target='one'>Prev</button>&nbsp;
+			<button data-target='three'>Next</button>&nbsp;
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, magnam, consectetur quo facere iure doloremque ducimus obcaecati modi nihil tenetur veniam, optio earum quas molestias nulla temporibus, similique ex distinctio.</p>
+		</div>
+
+
+
+		<div id="three">
+			
+	<h2>Section three</h2>
+			<button data-target='two'>Prev</button>&nbsp;
+			<button data-target='four'>Next</button>&nbsp;
+		
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, magnam, consectetur quo facere iure doloremque ducimus obcaecati modi nihil tenetur veniam, optio earum quas molestias nulla temporibus, similique ex distinctio.</p>
+		</div>
+
+
+
+		<div id="four">
+			
+		<h2>Section four</h2>
+			<button data-target='three'>Prev</button>&nbsp;
+			<button data-target='five'>Next</button>&nbsp;
+	
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, magnam, consectetur quo facere iure doloremque ducimus obcaecati modi nihil tenetur veniam, optio earum quas molestias nulla temporibus, similique ex distinctio.</p>
+		</div>
+
+
+
+		<div id="five">
+			
+		<h2>Section five</h2>
+			<button data-target='four'>Prev</button>&nbsp;
+			<button data-target='six'>Next</button>&nbsp;
+	
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, magnam, consectetur quo facere iure doloremque ducimus obcaecati modi nihil tenetur veniam, optio earum quas molestias nulla temporibus, similique ex distinctio.</p>
+		</div>
+
+
+
+		<div id="six">
+			
+			<h2>Section six</h2>
+			<button data-target='one'>Top</button>&nbsp;
+			<button data-target='five'>prev</button>&nbsp;
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, magnam, consectetur quo facere iure doloremque ducimus obcaecati modi nihil tenetur veniam, optio earum quas molestias nulla temporibus, similique ex distinctio.</p>
+		</div>
+
+
+
+	</div> <!-- /container -->
+
+
+
+	<script>
+		onload = function (){
+
+		var buttons = document.getElementsByTagName('button');
+		
+		for(var i = 0; i<buttons.length; i++){
+			buttons[i].onclick = function(e){
+
+				var target = this.getAttribute('data-target');
+				var el = document.getElementById(target)
+				el.scrollIntoView({
+					alignTop: true,
+					behavior: 'smooth'
+				})
+
+			}
+		}
+
+
+	
+
+
+
+
+	} // end onload
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var Car = function(make, model, color, price, image){
+
+			this.make = make;
+			this.model = model;
+			this.color = color;
+			this.price = price;
+			this.image = image;
+
+		}
+
+		Car.prototype.toString = function (){
+			return "I am a " + this.make + ',' + this.model + "!"
+		}
+
+		Car.prototype.vehicleType = "wheeled"
+		
+
+		var honda = new Car('honda', 'civic', "blue")
+		console.log(honda);
+		alert(honda)
+
+		var acura = new Car('Acura', 'Integra', "blue", 2000, 'acura.jpg')
+console.log(acura);
+alert(acura)
+	</script>
+</body>
+</html>

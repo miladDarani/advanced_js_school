@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#ball {
+
+			width: 50px;
+			height: 50px;
+			border-radius: 50px;
+			background-color: orange;
+			position: absolute;
+			top: 150px;
+			left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+
+		<h1>Sounds</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ducimus dicta facere, eum, maxime officia rem natus, harum asperiores similique molestias perspiciatis nam temporibus atque tempore eaque nihil suscipit, hic?</p>
+
+		
+
+	</div>
+	<div id="ball"></div>
+	<!-- ----------------------------------------------------------------------------------- -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
+	<!-- ----------------------------------------------------------------------------------- -->
+	<script>
+		const sound = new Audio();
+		sound.src = 'doh1_y.wav';
+
+		$(document).ready(function(){
+
+			setTimeout('moveBall()',2000);
+			addClickHandler();
+
+		});
+
+		function moveBall(){
+			var max_y = window.innerHeight;
+			var max_x = window.innerWidth;
+
+			var x = Math.round(Math.random()* max_x);
+			var y = Math.round(Math.random()* max_y);
+
+			x = x + "px";
+			y = y + "px";
+
+			console.log(x,y)
+			$('#ball').animate({
+				top: y ,
+				left: x 
+			})
+		}
+
+		function addClickHandler(){
+			$('#ball').click(function(e){
+				sound.play()
+			})
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var House = function(sqrfoot,numbathrooms){
+			this.sqrfoot = sqrfoot;
+			this.numbathrooms = numbathrooms;
+		}
+
+		var bungalow = new House (1800,4);
+		var twostory = new House (1300,2);
+		console.log(bungalow)
+		console.log(twostory)
+		
+		House.prototype.openFrontDoor = function(){
+			return "Doors Open"
+		}
+		House.prototype.closeFrontDoor = function(){
+			return "Doors Closed"
+		}
+
+		
+
+	</script>
+</body>
+</html>
