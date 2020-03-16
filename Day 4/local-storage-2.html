@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Local Storage</title>
+</head>
+<body>
+	<h1>Local Storage</h1>
+	<div id="info">
+		
+	</div>
+
+
+		</form>
+		<script>
+			window.onload = function() {
+				var first = window.localStorage.getItem('first');
+				var last = window.localStorage.getItem('last');
+				var email = window.localStorage.getItem('email');
+
+				var out = "<p>" + first + last + email + "</p>"
+				document.getElementById('info').innerHTML = out
+
+			}
+		</script>
+</body>
+</html>

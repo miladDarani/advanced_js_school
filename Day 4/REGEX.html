@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegEx - Quantifiers</title>
+</head>
+<body>
+<h1>Regex Quntifier</h1>
+<script>
+    var pattern2 = /[a-z]/; //just one character, ranging from a-z
+    var pattern1 =/[a-z]{3}/ //must be 3 small letters
+    var pattern3 = /[a-z]{1,}/; // matches one or more
+    var pattern4 = /[a-z]{8,12}/; // matches a-z must be min 8 and max 12 characters
+
+
+    //other QUANTIFIERS (quantifier special characters)
+    var pattern5 = /[a-z]?/ // this matches 0 or 1 -- makes it optional
+    //''
+    //'a'
+    var pattern_phone = /[\-.\s]?/ // you can have zero or one of this class can have either a ( -, period, space )
+    var pattern6 = /[a-z]+/ //match one or more of character class ex ==== {1, }
+    var pattern7 = /[a-z]*/; // match 0 or more characters ex ===== {0, }
+
+    // {} - Range
+    // ? - 0 or 1 (optional)
+    // + - 1 or more
+    // * - 0 or more
+
+    // var pattern8 = /^[A-Z]/ //must start with A-Z ( 1 character only )
+    // str.match(pattern)
+    // var str2 = str.replace(pattern, 'sdsd')
+    var phone = '(204) 1234 4545'
+    var cleanPhone = phone.replace(/[^0-9]/g, '');
+    console.log(cleanPhone)
+</script>
+</body>
+</html>

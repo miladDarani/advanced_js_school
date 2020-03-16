@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body {
+			font-family: "Open Sans", Arial, Verdana, sans-serif;
+			font-size: 16px;
+		}
+		* {
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Object Constructors</h1>
+	</div>
+<script>
+
+	var Car = function(make, model, color, price, image) {
+
+		this.make = make;
+		this.model = model;
+		this.color = color;
+		this.price = price;
+		this.image = image;
+
+	}
+
+	Car.prototype.toString = function() {
+		return "I am a " + this.make + ', ' + this.model + '!';
+	}
+
+	Car.prototype.vehicleType = 'Wheeled';
+
+	console.log(Car);
+
+	var honda = new Car('Honda', 'Civic', 'Red', 23000, 'honda.jpg');
+
+	var malibu =  new Car('Chevy', 'Malibu', 'Gold', 35000, 'malibu.jpg');
+
+	honda.mileage = '35mpg';
+
+	alert(honda);
+
+	alert(malibu);
+
+
+
+
+	console.log(honda);
+
+	console.log(malibu);
+
+</script>
+</body>
+</html>

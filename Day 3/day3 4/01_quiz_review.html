@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<script>
+
+
+function sum()
+{
+	// we can access all arguments passed
+	// to a function in the arguments object
+	console.log(arguments)
+
+}
+
+sum(1,3,4,6,7);
+
+
+$(document).ready(function(){
+	// wait until document (DOM) has loaded
+	// then execute code in here
+});
+
+window.onload = function(){
+	// wait until document (DOM) has loaded
+	// then execute code in here
+}
+
+
+arguments = {
+	'0': 5,
+	'1': 22,
+	'2': 33
+}
+
+// For objects
+for(var i in arguments) {
+	// This will work with an object,
+	// because it simply looks for
+	// properties
+}
+
+// For arrays
+for(var i =0; i<arguments.length;i++) {
+	// will not work with an object
+	// because it will have no length
+}
+
+
+</script>

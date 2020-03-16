@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Regex2</title>
+	<style>
+		body {
+			font-family: "Open Sans", Arial, Verdana, sans-serif;
+			font-size: 16px;
+		}
+		* {
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Regular Expressions - With Character Classes</h1>
+	</div>
+<script>
+
+	// It's easy to search for /cat/
+	
+	// first names
+	// a-z A-Z - \s
+	
+	// We can add characters to a character class
+	var pattern_name = /[A-Za-z\-\s]{2,32}/;
+
+
+	var first_name ="Nik";
+
+	var found = first_name.match(pattern_name);
+
+	console.log(found);
+
+	var last_name = 'Pop@dopolus';
+
+	var found2 = last_name.match(pattern_name);
+
+	console.log(found2);
+
+	// ^ outside character class means start
+	// $ outside a character class means end
+	// String must be a max of 32 characters
+	// String must be a min of 2 characters
+	// String can only contain the character class
+	// characters
+	var pattern2 = /^[A-Za-z\-\s]{2,32}$/;
+
+	var found3 = last_name.match(pattern2);
+
+	// should be no match
+	console.log(found3);
+
+	// SKU
+	// ABC-123-a
+	// ZZZ-999-d
+	// AFG-356-u
+	// aFG-12-x
+	// AFG356U
+	
+	var sku_pattern = /^[A-Z]{3}-[0-9]{3}-[a-z]{1}$/;
+
+	var sku1 = 'ABC-123-a';
+
+	var sku2 = 'AFG356U';
+
+	console.log(sku1.match(sku_pattern));
+
+	console.log(sku2.match(sku_pattern));
+
+	var sku_pattern = /^([A-Z]{3})-([0-9]{3})-([a-z]{1})$/;
+
+	var matches = sku1.match(sku_pattern);
+
+	console.log(matches);
+
+	// name@domain.com
+	// var split_email = email.split('@');
+
+
+	var email_pattern = /^([a-zA-Z0-9_]{2,24})[@]{1}([a-zA-Z_]{2,24})[.]{1}([a-zA-Z_]{2,10})$/;
+
+	var matches2 = "steve@glort.com".match(email_pattern);
+
+	console.log(matches2);
+
+	console.log(matches2[1]);
+	console.log(matches2[2]);
+	console.log(matches2[3]);
+
+
+
+	
+
+
+
+</script>
+</body>
+</html>

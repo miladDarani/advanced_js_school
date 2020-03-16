@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Milad 1 Assignment</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+	<style>
+
+		#error {
+			color: #f8f8f8;
+			text-align: center;
+			transition: .6s;
+			border-top-right-radius: 5px;
+			border-top-left-radius: 5px;
+		}
+
+		body{
+			font-family: 'Oswald' ;
+			display: flex;
+			background: linear-gradient(270deg, #1ea780, #dff0ed, #3a444d);
+			background-size: 600% 600%;
+			-webkit-animation: AnimationName 24s ease infinite;
+			-moz-animation: AnimationName 24s ease infinite;
+			animation: AnimationName 24s ease infinite;
+		}
+		@-webkit-keyframes AnimationName {
+    	0%{background-position:0% 50%}
+    	50%{background-position:100% 50%}
+    	100%{background-position:0% 50%}
+		}
+		@-moz-keyframes AnimationName {
+    	0%{background-position:0% 50%}
+    	50%{background-position:100% 50%}
+    	100%{background-position:0% 50%}
+		}
+		@keyframes AnimationName {
+    	0%{background-position:0% 50%}
+    	50%{background-position:100% 50%}
+    	100%{background-position:0% 50%}
+		}
+
+		label{
+			font-family: 'Oswald' ;
+		}
+
+		form{
+			
+			flex-direction: row;
+			text-align: center;
+			background-color:#212a34;
+			color:white;
+			display: flex;
+			flex-direction: column;
+		}
+
+		#wrapper{
+			margin: 0 auto;
+		}
+
+		button{
+			padding:12px;
+			width:85%;
+			font-family: 'Oswald';
+			font-size:30px;
+			color:white;
+			background-color: #1ea780;
+			border:none;
+			letter-spacing: 4px;
+		}
+
+		input{
+			width:80%;
+			padding: 10px;
+			background-color:#212a34;
+			border:1px solid #ccc;
+			color:white;
+			font-size:15px;
+		}
+
+		.fl_name{
+			width: 89%;
+			padding-top: 30px;
+			padding-bottom: 16px;
+			display: inline-flex;
+			text-align: center;
+			margin: 0 auto;
+		}
+
+		.f_name{
+			width: 80%;
+		}
+
+		.l_name {
+			width:80%;
+		}
+
+		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			font-size:15px;
+	  color: #7a7e80;
+	  opacity: 1; /* Firefox */
+		}
+
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			font-size:13px;
+	  color: #7a7e80;
+		}
+
+		::-ms-input-placeholder { /* Microsoft Edge */
+			font-size:13px;
+	  color: #7a7e80;
+		}
+
+		#box {
+
+		}
+		.header{
+			letter-spacing: 4px;
+		}
+
+		#error-div{
+			background-color:#1ea780;
+			border:4px solid #212a34;
+			border-bottom: none;
+		}
+		#error {
+			margin-top:-15px;
+		}
+
+		#txt {
+			color:white;
+			text-align: center;
+			font-size:40px;
+		}
+		#grp-btns{
+
+    display: flex;
+    width: 92%;
+    justify-content: space-evenly;
+    margin-left:22px;
+
+		}
+		#btn1, #btn2 {
+			width: 100%;
+		}
+
+		#box-p{
+			display: none;
+		}
+
+		#box-1 {
+			display: flex;
+			justify-content: center;
+		}
+
+	</style>
+
+</head>
+<!-- ************************** BODY **************************** -->
+<body>
+
+<div id="wrapper">
+
+	<h1>Milad Darani - Assignment 1 - Form Validation</h1>
+
+	<div id="error-div">
+		<p id =error onclick="startTime()"></p>
+		<div id="txt"></div>
+	</div>
+
+	<form id="form1" name="form1" action="https://uwpace.ca/post.php" method="post" >
+
+	
+
+		<!-- First name & Last name -->
+		<div class="fl_name">
+
+			<div class="f_name">
+		  	<input onchange="pop_up(this)" pattern="^[a-zA-Z]+$" id="first" name="First-Name" type="text" placeholder="First Name *" required/>
+		  </div>
+
+			<div class="l_name">
+				<input onchange="pop_up(this)" pattern="^[a-zA-Z]+$" id="last" name="Last-Name" type="text" placeholder="Last Name *" required/>
+			</div>
+			
+		</div>
+
+		<div id="box-1">
+				<p id ="box-p">These characters are not allowed:<br /> </p>
+		</div>
+		
+		<p>
+		  <input pattern="^[\w]{1,32}(\.[\w]{1,32}){0,2}@[\w]{1,32}\.[a-z]{2,10}$" name="E-Mail" id="email" type="text" placeholder="Type your e-mail address *" required/>
+		</p>
+
+		<p>
+			<input pattern="^[0-9(\)\-_\s\.]{10,15}$" id="phone" name="Phone#" type="text" placeholder="Phone Number *" required/>
+		</p>
+
+		<p>
+			<input pattern= '[A-Z][0-9][A-Z]\s[0-9][A-Z][0-9]' id="postal" name="Postal-Code" type="text" placeholder="Postal Code i.e R2J1L5 *" required/>
+		</p>
+
+		<p>
+		 <input pattern= "(http[s]?:/\/)[a-zA-Z0-9_\.]{1,32}" id="url" name="URL" type="text" placeholder="Enter Website | example: http://john.com"/>
+		</p>
+
+		<p>
+			<input pattern="[0-9]{1,3}" name="Age" id="age" type="text" placeholder="Your Age" />
+		</p>
+
+		<div class="buttons">
+			<p><button type="submit">SUBMIT</button></p>
+
+			<!-- <div id="grp-btns">	
+				<div id="btn2"><button>SET COOKIE</button></div>
+				<div id="btn1" ><button onclick="page2(); return false" >PAGE 2 ></button></div>
+			</div> -->
+
+			<!-- <p><button onclick="resetForm(this)">RESET</button></p> -->
+		</div>
+
+	</form> <!-- end form -->
+</div><!-- /wrapper -->
+
+<script>
+//--------------------------------------------------------------------------------------------
+	
+
+	var last = document.getElementById('last').text;
+	var e_mail= document.getElementById('email').value;
+	var phone = document.getElementById('phone').value;
+	var postal = document.getElementById('postal').value;
+	var error = "";// empty error string
+  var p = document.getElementById("error");
+	
+//--------------------------------------------------------------------------------------------
+function pop_up(el){
+
+	var pattern = /^[a-zA-Z]+$/;
+
+	var box_p = document.getElementById('box-p');
+
+
+  var str = el.value; 
+  var result = pattern.test(str)
+  
+
+  if(result === false){
+
+  		for( var i =0; i<str.length; i++){
+  				
+  				if(str[i].match(pattern)){
+
+  				}// end /if
+  				else
+  				{
+  						var error ='';
+  						error+=str[i];
+  						box_p.style.display = 'flex';
+  						box_p.innerHTML += error
+  				} // end /else
+  				
+  		} // end /for
+
+  		
+  } // end /if
+
+  else{
+  	
+  }
+
+}
+	//function takes this from form
+	// function validateForm(form) {
+
+	// 	for( var i = 0; i < form.elements.length; i++){
+
+	// 		var input = form.elements[i]
+	// 			if(input.required === true ){// <-- if 1 - -  checks for REQUIRED fields in FORM
+
+	// 			if(input.value.length === 0  ){ // <-- if 2 - - if REQUIRED.VALUE field is === 0 
+
+	// 				error+= input.name + " Needs to be filled out..<br />"; //adds error field names
+	// 			}// /if 2
+	// 		}//  /if 1
+	// 	}//   /for loop
+
+	// 			if (error.length > 0){// <-- if there are any errors:
+	// 				//This is where the wrrors are written
+	// 				p.innerHTML = "<p style='padding:7px;'></p>" + error + "<div class='buttons'><p><button onclick='resetForm(this)' style='color:white;background-color:#3a464d;'>RESET</button></p></div>";
+	// 				// var conf = confirm("Want to try again?");
+	// 				// if(conf===true){
+	// 				// 	location.reload();
+	// 				// }else{
+	// 				// 	return false
+	// 				// }
+
+	// 				 // checks email using function
+
+	// 				return false
+	// 			}// end if
+
+	// }//    /validateForm()
+//--------------------------------------------------------------------------------------------
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>HTML5 Pattern Recognition</h1>
+	<div class="container">
+		<form action="https://uwpace.ca/post.php" method="post">
+
+
+			<p><label for="first">First</label><br />
+				<input pattern="^[A-Z]{1}[a-z]{1,31}" type="text" name="first">
+			</p>
+
+			<p><label for="email">Email</label><br />
+				<input pattern="^[\w]{1,32}(\.[\w]{1,32}){0,3}@[\w]{1,32}\.[a-z]{2,10}$" type="text" name="email">
+			</p>
+
+			<p><label for="sku">SKU</label><br />
+				<input type="text" name="sku">
+			</p>
+			
+			<p><button type="submit">Submit</button></p>
+
+		</form>
+	</div>
+
+</body>
+</html>

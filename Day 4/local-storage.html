@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Local Storage</title>
+</head>
+<body>
+	<h1>Local Storage</h1>
+
+	<form id='register' action="https://uwpace.ca/post.php" method="post" novalidate>
+
+			<p><label for="email">EMAIL</label>
+					<input type="text" name="email">
+			</p>
+
+			<p><label for="text">First</label>
+					<input type="text" name="first_name">
+			</p>
+
+				<p><label for="text">Last Name</label>
+					<input type="text" name="last_name">
+			</p>
+
+			<a href="local-storage-2.html">page 2</a>
+			<button type="submit">Submit</button>
+
+		</form>
+		<script>
+			window.onload = function() {
+				var form = document.getElementById('register');
+
+				form.addEventListener('submit', function(e){
+					e.preventDefault()
+					var first = this.first_name.value;
+					var last = this.last_name.value;
+					var email = this.email.value;
+
+					var store = window.localStorage;
+
+					store.setItem('first', first)
+					store.setItem('last', last)
+					store.setItem('email', email)
+
+				})
+			}
+		</script>
+</body>
+</html>

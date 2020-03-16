@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+<button id="click1">Click me </button>
+<script>
+    window.onload = function () {
+        console.log(this)
+        document.getElementById('click1').addEventListener('click', function (e) {
+            console.log(this) // <-- BUTTON is "this
+        })
+    }
+
+    function doSomething()
+    {
+        console.log(this) // <-- 'this' is WINDOW at this point
+    }
+    doSomething()
+
+    var user = function(){
+
+    }
+    user.prototype.test = function(){
+        console.log(this)
+    }
+    const user1 = new user();
+    user1.test()
+</script>
+</body>
+</html>

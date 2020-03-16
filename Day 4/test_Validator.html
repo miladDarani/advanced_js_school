@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Validator</title>
+</head>
+<body>
+	<div class="container">
+		<form id='register' action="https://uwpace.ca/post.php" method="post" novalidate>
+
+			<p><label for="email">EMAIL</label>
+					<input type="text" name="email">
+			</p>
+
+			<p><label for="text">First</label>
+					<input type="text" name="first_name">
+			</p>
+
+				<p><label for="text">Last Name</label>
+					<input type="text" name="last_name">
+			</p>
+
+
+			<button type="submit">Submit</button>
+
+		</form>
+	</div>
+
+
+	<script src="Validator.js"></script>
+	<script>
+			window.onload = function(){
+
+
+				var form = document.getElementById('register');
+				form.addEventListener('submit', function(e){
+					  e.preventDefault();
+					  var v = new Validator();
+
+					  //Grab all form field values
+					  var email= form.email.value;
+					  var f_name = form.first_name.value;
+					  var l_name = form.last_name.value;
+					  
+						//validate all fields
+					  v.validateEmail(email);
+					  v.validateString(f_name, "First Name");
+					   v.validateString(l_name, "Last Name");
+
+
+					  console.log(v.error)
+					  if(v.error.length === 0){
+					  	form.submit()
+					  }
+				}) // /addEventListener
+			} // /onload
+
+
+	</script>
+
+
+
+</body>
+</html>
